@@ -14,10 +14,12 @@ if (isset($_POST['submit'])) {
             $errors['email'] = 'email must be a valid email address';
         }
     }
+    if (array_filter($errors)) {
+    } else {
+        header('Location: index.php');
+    }
 
     // check title
-
-
     if (empty($_POST['title'])) {
         $errors['title'] = 'A title is required';
     } else {
